@@ -253,6 +253,56 @@ body {
   color:#333;
 }
 
+/*login
+*/
+
+#login {
+  padding: 0px 0px 30px 0px;
+}
+
+#login label {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#login form{
+  color: #000;
+  padding: 30px 30px;
+}
+
+#login .btn {
+  margin-top: 30px;
+  background-color: #f05f40;
+  margin-bottom: 10px;
+}
+
+#login .btn:hover {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  background-color: #eb3812;
+}
+
+.login-heading {
+  margin-top:20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 60px;
+  text-shadow: 3px 3px 6px #222;
+
+}
+
+.login-button-div {
+  text-align: center;
+}
+
+.login-button-div a {
+  color:#f05f40;
+}
+
+.login-button-div a:hover {
+  text-decoration: none;
+  color:#333;
+}
 
 /*dashboard styling*/
 
@@ -300,7 +350,11 @@ body {
 
 /*tracker view styling*/
 
-img {
+.logo {
+  transition: all 0.5s;
+}
+
+.pie-img {
   height: 300px;
   width: 300px;
   transition: all 0.5s;
@@ -335,24 +389,21 @@ img {
 }
 
 .filter {
-  margin-top: 10px;
   margin-right: 10px;
   border-radius: 0px;
 }
 
-img:hover {
-  transform: scale(1.2);
+.search-bar {
+  margin-top: 0px;
 }
 
 .activity-btn {
-  margin-top: 10px;
+  border-radius: 0px;
   margin-left: 10px;
-  background-color: #6a7789;
-  color: #fff;
 }
 
-.activity-btn:hover {
-  background-color: #426489;
-  color: #fff;
-  /*border: solid 2px ;*/
-}
+
+
+/*img:hover {
+  transform: scale(1.2);
+}*/

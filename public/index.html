@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-animate.js"></script>
     <base href="/">
 </head>
-<body>
+<body ng-controller="GlobalController">
 <header class="master-header">
   <div class="container-fluid">
     <div class="nav-header">
@@ -53,13 +53,13 @@
          <!--  <li><a href="#" ng-click='login = !login'>Login</a></li> -->
           <li><a href="/register">email goes here</a></li>
           <li>
-            <form name="loginForm" ng-if="login" class="showLoginForm" ng-show="login" novalidate>
+            <!-- <form name="loginForm" ng-if="login" class="showLoginForm" ng-show="login" novalidate>
               <label> Email: <input ng-class='{fieldInvalid: loginForm.email.$invalid}' class="form-control" type="email" name="email" required> </label>
               <label> Password: <input ng-class='{fieldInvalid: loginForm.password.$invalid}' class="form-control" type="password" name="password" required> </label>
               <button ng-disabled="loginForm.$invalid" ng-click="authenticate()" class="btn btn-warning">
                   Submit
               </button>
-            </form>
+            </form> -->
           </li>
         </ul>
       </div>
