@@ -11,12 +11,17 @@ body {
 
 .master-header {
   background-size: cover;
-  background-color: gray;
+  background-color: #545454;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .logo {
   height: 175px;
   width: auto;
+  background-color: #455A64;
+  box-shadow: 10px 10px 4px #333;
+  padding-left: 10px;
 }
 
 .nav-header-row {
@@ -42,53 +47,33 @@ body {
 #three-features {
   width: 100%;
   background-color: #f8f8f8;
-  padding-top: 100px;
+  padding-top: 60px;
   text-align: center;
   min-height: 350px;
 }
 
 .three-features-row {
-
+  text-align: center;
+}
+.x {
+  margin-top: 20px;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .y {
-  border: 1px solid black;
+/*  border: 1px solid black;*/
+}
+.three {
+  color: #f05f40;
+  font-size: 100px;
 }
 
-#problem {
-  text-align: center;
-  box-sizing: border-box;
-  padding-top: 15px;
-  min-height: 200px;
-  background-color: #555;
-  color: #fff;
-}
-
-
-#solution {
-  text-align: center;
-  box-sizing: border-box;
-  padding-top: 25px;
-  min-height: 200px;
-  background-color: #f05f40;
-  color: #fff;
-}
-
-#tracktivity {
-  padding-top: 50px;
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  text-align: center;
-  color: #fff;
-  background-image: url(/images/running-kids.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
 
 #carousel {
   background-color: #D3D3D3;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .glyphicon-chevron-left {
@@ -120,6 +105,42 @@ body {
   background-color: #f05f40;
 }
 
+#problem {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 15px;
+  min-height: 200px;
+  background-color: #555;
+  color: #fff;
+}
+
+
+#solution {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 25px;
+  min-height: 200px;
+  background-color: #f05f40;
+  color: #fff;
+}
+
+#tracktivity {
+  padding-top: 270px;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  text-align: center;
+  color: #fff;
+  background-image: url(/images/running-kids.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.join-footer-btn {
+  border-radius: 0;
+}
 
 
 
@@ -129,7 +150,7 @@ body {
   background-color: #455A64;
   color: #CFD8DC;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   text-align: center;
 }
 
@@ -151,4 +172,187 @@ body {
 .btn-social-icon {
   margin: 15px 5px 0px 15px;
   box-shadow: 3px 3px 8px #333;
+}
+
+/*styling for register page*/
+
+#register {
+  padding: 0px 0px 30px 0px;
+}
+
+/*#register:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  min-height: 800px;
+  width: 100%;
+  padding: 50px 0;
+  background: url(http://thinkpynk.com/wp-content/uploads/2015/09/Children-Playing.jpg) no-repeat center center scroll;
+  background-color: #000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}*/
+
+#register label {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#register form{
+  color: #000;
+  padding: 30px 30px;
+}
+
+#register .btn {
+  margin-top: 30px;
+  background-color: #f05f40;
+  margin-bottom: 10px;
+}
+
+#register .btn:hover {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  background-color: #eb3812;
+}
+
+.margin-left {
+  margin-left: 5px;
+}
+
+.form-container {
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 40px;
+}
+
+.register-heading {
+  margin-top:20px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 60px;
+  text-shadow: 3px 3px 6px #222;
+
+}
+
+.register-button-div {
+  text-align: center;
+}
+
+.register-button-div a {
+  color:#f05f40;
+}
+
+.register-button-div a:hover {
+  text-decoration: none;
+  color:#333;
+}
+
+
+/*dashboard styling*/
+
+#dashboard-view {
+  padding: 20px;
+  background-color: #d3d3d3;
+  min-height: 430px;
+}
+
+#dashboard-view img {
+  height: 60%;
+  width: 80%;
+}
+
+#dashboard-view img:hover {
+  cursor: pointer;
+}
+
+.dashboard-nav button {
+  margin: 30px;
+}
+
+.dash-btn {
+  border-radius: 0;
+}
+
+/*thumbnail
+*/
+.thumbnail img {
+  height: 250px;
+  width: 300px;
+  transition: all 0.5s;
+}
+
+.thumbnail {
+  padding-top: 40px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px #333;
+  overflow: hidden;
+}
+
+.thumbnail h3 {
+  font-weight: bold;
+}
+
+/*tracker view styling*/
+
+img {
+  height: 300px;
+  width: 300px;
+  transition: all 0.5s;
+}
+
+#tracker-view {
+  padding: 20px;
+  background-color: #d3d3d3;
+}
+
+.second-row {
+  padding-left: 75px;
+}
+
+.thumbnail {
+  padding-top: 40px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px #333;
+  overflow: hidden;
+}
+
+.thumbnail h3 {
+  font-weight: bold;
+}
+
+.tracker-nav {
+  padding: 20px;
+}
+
+.tracker-nav input.form-control {
+  width: 300px;
+}
+
+.filter {
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 0px;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+.activity-btn {
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #6a7789;
+  color: #fff;
+}
+
+.activity-btn:hover {
+  background-color: #426489;
+  color: #fff;
+  /*border: solid 2px ;*/
 }

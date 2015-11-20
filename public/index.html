@@ -24,10 +24,10 @@
   <div class="container-fluid">
     <div class="nav-header">
       <div class="nav-header-row row">
-        <div class="col-md-3 col-md-offset-1">
+        <div class="col-xs-3 col-xs-offset-1">
           <img class="logo image-responsive" src="images/tracktivitylogo111915-1557.png">
         </div>
-        <div class="header-btns col-md-3 col-md-offset-5">
+        <div class="header-btns col-xs-3 col-xs-offset-5">
           <button class="header-btn btn btn-lg btn-primary">Login
           </button> |
           <button class="header-btn btn btn-lg btn-primary">Register
@@ -44,13 +44,14 @@
         <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
 
         <a href="/" class="navbar-brand page-scroll">Home</a>
+        <a href="/tracker" class="navbar-brand page-scroll">Tracker</a>
+        <a href="/" class="navbar-brand page-scroll">Discovery</a>
       </div>
 
       <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
          <!--  <li><a href="#" ng-click='login = !login'>Login</a></li> -->
-          <li><a href="/register">Register</a></li>
-          <li><a href="/tracker">Tracker</a></li>
+          <li><a href="/register">email goes here</a></li>
           <li>
             <form name="loginForm" ng-if="login" class="showLoginForm" ng-show="login" novalidate>
               <label> Email: <input ng-class='{fieldInvalid: loginForm.email.$invalid}' class="form-control" type="email" name="email" required> </label>
