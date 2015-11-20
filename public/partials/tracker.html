@@ -1,31 +1,9 @@
-<div id="tracker-view">
-  <div class="row tracker-nav col-md-offset-3">
-    <div class="text-center tracker-nav col-md-8">
-      <ul class="nav navbar-nav">
-        <div class="btn-group">
-          <button type="button" class="filter btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Day</a></li>
-            <li><a href="#">Week</a></li>
-            <li><a href="#">Two Weeks</a></li>
-            <li><a href="#">Month</a></li>
-          </ul>
-        </div>
-      </ul>
-      <form class="search-bar navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
-      <a href='/activities' class="activity-btn btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Activity</a>
-    </div>
-  </div>
-  <div class="row">
+<div class="row">
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='MondayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels" chart-options='options'>
+        </canvas> 
         <div class="caption">
           <h3 class="text-center text-info">Monday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -33,8 +11,10 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='TuesdayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels"chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Tuesday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -42,8 +22,10 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='WednesdayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels"chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Wednesday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -51,8 +33,10 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='ThursdayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels"chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Thursday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -62,8 +46,10 @@
   </div>
   <div class="row second-row">
     <div class="col-md-3 col-md-offset-1">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='FridayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels"chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Friday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -71,8 +57,10 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='SaturdayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels"chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Saturday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
@@ -80,8 +68,10 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="thumbnail">
-        <img class="thumbnail-img" src="images/pie.png" alt="...">
+      <div ng-controller='SundayPie' class="thumbnail">
+        <canvas id="pie" class="chart chart-pie"
+          chart-data="data" chart-labels="labels" chart-options='options'>
+        </canvas>
         <div class="caption">
           <h3 class="text-center text-info">Sunday</h3>
           <p class="text-center"><a href="#" class="btn btn-primary" role="button">Details</a></p>
