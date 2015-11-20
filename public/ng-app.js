@@ -2,32 +2,44 @@ var app = angular.module('app', ['ngAnimate', 'ngRoute'], function config($httpP
     $httpProvider.interceptors.push('AuthInterceptor');
 });
 
-app.constant('API_URL', 'http://localhost:3000');
+app.constant('API_URL', 'http://avid-api.cfapps.io');
 
-app.controller('GlobalController', function ($scope) {
-  $scope.money = 'dope';
+app.controller('GlobalController', function ($scope, $http, $q, UserFactory, RandomUserFactory) {
+  // $scope.push = function() {
+  //   UserFactory.getUser().then(function (response) {
+  //   console.log(response)
+  //   $scope.data = response
+  //   })
+  // }
+  $scope.login = function(user) {
+    UserFactory.login(user).then(function success(response) {
+      console.log(response)
+      // $scope.currentUserID = response.data.user;
+      // $scope.currentUserEmail = response.data.email;
+      localStorage.setItem('id', response.data.user);
+      localStorage.setItem('email', response.data.email);
+      console.log('successful log in');
+
+    }, handleError);
+  }
+  $scope.logout = function() {
+    UserFactory.logout();
+    localStorage.removeItem('id');
+    localStorage.removeItem('email');
+  }
+  function handleError(response) {
+    alert('Error: ' + response.data);
+  }
 })
 app.controller('LandingController', function ($scope) {
 
 })
-app.controller('LoginController', function ($scope, $http, UserFactory, RandomUserFactory) {
-  $scope.getUser = function() {
-    RandomUserFactory.getUser().then(function success(response) {
-      $scope.randomUser = response.data;
-    }, handleError);
-  }
-  $scope.login = function(user) {
-    UserFactory.login(user).then(function success(response) {
-      $scope.currentUser = response.data;
-    }, handleError);
-  }
-  // $scope.logout = function() {
-  //   UserFactory.logout();
-  //   $scope.currentUser = null;
-  // }
-
-  function handleError(response) {
-    alert('Error: ' + response.data);
+app.controller('LoginController', function ($scope, $http, $q, UserFactory, RandomUserFactory) {
+  $scope.showData = function() {
+    $http.get('http://avid-api.cfapps.io/guardians').then(function(response){
+      console.log(response.data);
+      $scope.data = response.data;
+    })
   }
 })
 app.controller('RegisterController', function ($scope, $http) {
@@ -58,18 +70,39 @@ app.controller('TrackerController', function ($scope) {
 })
 app.controller('DashboardController', function($scope, $http) {
   $scope.kids = [];
-  var guardianId = localStorage.getItem('id');
-  console.log(guardianId)
-  $http.get('http://avid-api.cfapps.io/relationships/' + guardianId).then(function(response) {
-      // console.log(response)
-      for (var x in response.data.rows) {
-          $http.get('http://avid-api.cfapps.io/kids/'+response.data.rows[x].kid_id).then(function(response){
-              console.log(response.data.rows)
-              $scope.kids.push(response.data.rows[0])
-              console.log($scope.kids);
+  $scope.kidObjects = [];
+  $http.get('http://avid-api.cfapps.io/relationships/' + localStorage.id).then(function(response) {
+    for(var i = 0; i < response.data.rows.length; i++) {
+      $scope.kids.push(response.data.rows[i].kid_id);
+    }
+  })
+    .then(function(response){
+      for(var j = 0; j < $scope.kids.length; j++) {
+        $http.get('http://avid-api.cfapps.io/kids/' + String($scope.kids[j]))
+          .then(function (response) {
+            console.log(response.data.rows[0])
+            $scope.kidObjects.push(response.data.rows[0])
           })
       }
-  })
+    })
+    // .then(function(response) {
+    //   for(var j = 0; j < response.data.rows.length; j++) {
+    //   $http.get('http://avid-api.cfapps.io/kids/' + response.data.rows[i].kid_id)
+    //     .then(function(response){
+    //       $scope.kidObjects.push(response.data)
+    //     })
+    // })
+  var guardianId = localStorage.getItem('user');
+  // $http.get('http://avid-api.cfapps.io/relationships/' + guardianId).then(function(response) {
+  //     // console.log(response)
+  //     for (var x in response.data.rows) {
+  //         $http.get('http://avid-api.cfapps.io/kids/'+response.data.rows[x].kid_id).then(function(response){
+  //             console.log(response.data.rows)
+  //             $scope.kids.push(response.data.rows[0])
+  //             console.log($scope.kids);
+  //         })
+  //     }
+  // })
   $scope.addKid = function(kid) {
     $http.post('http://avid-api.cfapps.io/kids',
         {
@@ -83,22 +116,37 @@ app.controller('DashboardController', function($scope, $http) {
           }
         }
         ).then(function(response) {
+          var guardianId = localStorage.id;
           var kidId = response.data.rows[0].id;
-          $http.post('http://avid-api.cfapps.io/relationships',
-          {
-            "data": {
-              "type": "relationship",
-              "attributes": {
-                "guardian_id": guardianId,
-                "kid_id": kidId
+            $http.post('http://avid-api.cfapps.io/relationships',
+            {
+              "data": {
+                "type": "relationship",
+                "attributes": {
+                  "guardian_id": guardianId,
+                  "kid_id": kidId
+                }
               }
             }
-          }
-          ).then(function(response) {
-              console.log(response.data);
-          })
-        });
-      $scope.kids.push($scope.kid);
+          )
+        })
+        //   var kidId = response.data.rows[0].id;
+
+        //   $http.post('http://avid-api.cfapps.io/relationships',
+        //   {
+        //     "data": {
+        //       "type": "relationship",
+        //       "attributes": {
+        //         "guardian_id": guardianId,
+        //         "kid_id": kidId
+        //       }
+        //     }
+        //   }
+        //   ).then(function(response) {
+        //     console.log(response.data);
+        //   })
+        // });
+      // $scope.kids.push($scope.kid);
       $scope.kid = {};
       $scope.showForm = false;
   }    
@@ -113,11 +161,12 @@ app.factory('RandomUserFactory', function RandomUserFactory($http, API_URL) {
     return $http.get(API_URL + '/random-user');
   }
 });
-app.factory('UserFactory', function UserFactory($http, API_URL, AuthTokenFactory) {
+app.factory('UserFactory', function UserFactory($http, $q, API_URL, AuthTokenFactory) {
   'use strict';
   return {
     login: login,
-    logout: logout
+    logout: logout,
+    getUser: getUser
   };
 
   function login(user){
@@ -134,6 +183,14 @@ app.factory('UserFactory', function UserFactory($http, API_URL, AuthTokenFactory
   function logout() {
     AuthTokenFactory.setToken();
     return null;
+  }
+
+  function getUser() {
+    if(AuthTokenFactory.getToken()) {
+      return $http.get('API_URL' + '/me')
+    } else {
+      return $q.reject({ data: 'client has no authorization '})
+    }
   }
 })
 app.factory('AuthTokenFactory', function AuthTokenFactory($window) {

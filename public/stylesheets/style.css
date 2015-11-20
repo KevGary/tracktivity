@@ -72,8 +72,8 @@ body {
 
 #carousel {
   background-color: #D3D3D3;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /*padding-top: 40px;
+  padding-bottom: 40px;*/
 }
 
 .glyphicon-chevron-left {
@@ -404,6 +404,10 @@ body {
 
 
 
-/*img:hover {
+.logo:hover {
   transform: scale(1.2);
-}*/
+}
+
+.thumbnail-img:hover {
+   transform: scale(1.2);
+}
