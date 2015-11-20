@@ -57,7 +57,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
     app.controller("TuesdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [40, 10, 10];
@@ -85,7 +85,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
     app.controller("WednesdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [30, 20, 10];
@@ -112,7 +112,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
 
     app.controller("ThursdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
@@ -142,7 +142,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
 
     app.controller("FridayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
@@ -171,7 +171,7 @@ app.controller("MondayPie", function ($scope) {
 
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
 
     app.controller("SaturdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
@@ -200,7 +200,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
 
     app.controller("SundayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
@@ -225,7 +225,7 @@ app.controller("MondayPie", function ($scope) {
             //String - A legend template
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
-    }])
+    })
            
 app.controller('LandingController', function ($scope) {
 
