@@ -1,10 +1,10 @@
-var app = angular.module('app', ['ngAnimate', 'ngRoute'], function config($httpProvider) {
+var app = angular.module('app', ['ngAnimate', 'ngRoute', 'chart.js'], function config($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
 });
 
 app.constant('API_URL', 'http://avid-api.cfapps.io');
 
-app.controller('GlobalController', function ($scope, $http, $q, UserFactory, RandomUserFactory) {
+app.controller('GlobalController', function ($scope, $http, $q, UserFactory, RandomUserFactory, $location) {
   // $scope.push = function() {
   //   UserFactory.getUser().then(function (response) {
   //   console.log(response)
@@ -19,8 +19,10 @@ app.controller('GlobalController', function ($scope, $http, $q, UserFactory, Ran
       localStorage.setItem('id', response.data.user);
       localStorage.setItem('email', response.data.email);
       console.log('successful log in');
-
+      $location.url('/dashboard');
+      $location.path('/dashboard');
     }, handleError);
+    
   }
   $scope.logout = function() {
     UserFactory.logout();
@@ -31,18 +33,185 @@ app.controller('GlobalController', function ($scope, $http, $q, UserFactory, Ran
     alert('Error: ' + response.data);
   }
 })
+app.controller("MondayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [300, 500, 100];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+app.controller("TuesdayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [40, 10, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 110,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+    app.controller("WednesdayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [30, 20, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 130,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+    app.controller("ThursdayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [30, 20, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 140,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+    app.controller("FridayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [10, 10, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 150,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+    app.controller("SaturdayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [10, 20, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 160,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
+    app.controller("SundayPie", ['$scope',function ($scope) {
+        $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+        $scope.data = [110, 20, 10];
+        $scope.options = {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#272822",
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+            //Number - The percentage of the chart that we cut out of the middle
+            percentageInnerCutout : 0, // This is 0 for Pie charts
+            //Number - Amount of animation steps
+            animationSteps : 170,
+            //String - Animation easing effect
+            animationEasing : "easeInOutBounce",
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
+        }
+    }])
 app.controller('LandingController', function ($scope) {
 
 })
 app.controller('LoginController', function ($scope, $http, $q, UserFactory, RandomUserFactory) {
   $scope.showData = function() {
     $http.get('http://avid-api.cfapps.io/guardians').then(function(response){
-      console.log(response.data);
       $scope.data = response.data;
     })
   }
 })
-app.controller('RegisterController', function ($scope, $http) {
+app.controller('RegisterController', function ($scope, $http, $location) {
   $scope.register = function(user) {
     $http.post('http://avid-api.cfapps.io/guardians',
       {
@@ -58,11 +227,11 @@ app.controller('RegisterController', function ($scope, $http) {
     ).then(function(response){
       localStorage.setItem('id', response.data.rows[0].id);
       console.log(response.data.rows[0].id);
+      // $location.url('/dashboard');
+      // $location.path('/dashboard');
     });
+
   }
-  // $http.get('http://avid-api.cfapps.io/guardians').then(function(response){
-  //     console.log(response.data);
-  // })
 })
 
 app.controller('TrackerController', function ($scope) {
@@ -71,7 +240,7 @@ app.controller('TrackerController', function ($scope) {
 app.controller('DashboardController', function($scope, $http) {
   $scope.kids = [];
   $scope.kidObjects = [];
-  $http.get('http://avid-api.cfapps.io/relationships/' + localStorage.id).then(function(response) {
+  $http.get('http://avid-api.cfapps.io/relationships/'+localStorage.id).then(function(response) {
     for(var i = 0; i < response.data.rows.length; i++) {
       $scope.kids.push(response.data.rows[i].kid_id);
     }
@@ -80,11 +249,13 @@ app.controller('DashboardController', function($scope, $http) {
       for(var j = 0; j < $scope.kids.length; j++) {
         $http.get('http://avid-api.cfapps.io/kids/' + String($scope.kids[j]))
           .then(function (response) {
-            console.log(response.data.rows[0])
+            // console.log(response.data.rows[0])
             $scope.kidObjects.push(response.data.rows[0])
+            console.log($scope.kidObjects)
           })
       }
     })
+ 
     // .then(function(response) {
     //   for(var j = 0; j < response.data.rows.length; j++) {
     //   $http.get('http://avid-api.cfapps.io/kids/' + response.data.rows[i].kid_id)
@@ -242,10 +413,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
           templateUrl: '/partials/register.html',
           controller: 'RegisterController'
       })
-      // .when('/tracker', {
-      //   templateUrl: '/partials/tracker.html',
-      //   controller: 'TrackerController'
-      // })
       .when('/tracker', {
           templateUrl: '/partials/tracker.html',
           controller: 'TrackerController'
