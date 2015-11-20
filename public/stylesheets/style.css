@@ -354,11 +354,11 @@ body {
   transition: all 0.5s;
 }
 
-.pie-img {
+/*.pie-img {
   height: 300px;
   width: 300px;
   transition: all 0.5s;
-}
+}*/
 
 #tracker-view {
   padding: 20px;

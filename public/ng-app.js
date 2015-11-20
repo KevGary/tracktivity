@@ -33,7 +33,8 @@ app.controller('GlobalController', function ($scope, $http, $q, UserFactory, Ran
     alert('Error: ' + response.data);
   }
 })
-app.controller("MondayPie", ['$scope',function ($scope) {
+
+app.controller("MondayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [300, 500, 100];
         $scope.options = {
@@ -57,7 +58,7 @@ app.controller("MondayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-app.controller("TuesdayPie", ['$scope',function ($scope) {
+    app.controller("TuesdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [40, 10, 10];
         $scope.options = {
@@ -73,6 +74,10 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             animationSteps : 110,
             //String - Animation easing effect
             animationEasing : "easeInOutBounce",
+
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeInQuad",
             //Boolean - Whether we animate the rotation of the Doughnut
             animateRotate : true,
             //Boolean - Whether we animate scaling the Doughnut from the centre
@@ -81,7 +86,7 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-    app.controller("WednesdayPie", ['$scope',function ($scope) {
+    app.controller("WednesdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [30, 20, 10];
         $scope.options = {
@@ -97,6 +102,9 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             animationSteps : 130,
             //String - Animation easing effect
             animationEasing : "easeInOutBounce",
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeOutBounce",
             //Boolean - Whether we animate the rotation of the Doughnut
             animateRotate : true,
             //Boolean - Whether we animate scaling the Doughnut from the centre
@@ -105,7 +113,8 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-    app.controller("ThursdayPie", ['$scope',function ($scope) {
+
+    app.controller("ThursdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [30, 20, 10];
         $scope.options = {
@@ -118,9 +127,14 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             //Number - The percentage of the chart that we cut out of the middle
             percentageInnerCutout : 0, // This is 0 for Pie charts
             //Number - Amount of animation steps
+
             animationSteps : 140,
             //String - Animation easing effect
             animationEasing : "easeInOutBounce",
+
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeInCirc",
             //Boolean - Whether we animate the rotation of the Doughnut
             animateRotate : true,
             //Boolean - Whether we animate scaling the Doughnut from the centre
@@ -129,7 +143,8 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-    app.controller("FridayPie", ['$scope',function ($scope) {
+
+    app.controller("FridayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [10, 10, 10];
         $scope.options = {
@@ -145,15 +160,20 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             animationSteps : 150,
             //String - Animation easing effect
             animationEasing : "easeInOutBounce",
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeOutBounce",
             //Boolean - Whether we animate the rotation of the Doughnut
             animateRotate : true,
             //Boolean - Whether we animate scaling the Doughnut from the centre
             animateScale : true,
             //String - A legend template
+
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-    app.controller("SaturdayPie", ['$scope',function ($scope) {
+
+    app.controller("SaturdayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [10, 20, 10];
         $scope.options = {
@@ -169,6 +189,10 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             animationSteps : 160,
             //String - Animation easing effect
             animationEasing : "easeInOutBounce",
+
+            animationSteps : 100,
+            //String - Animation easing effect
+            animationEasing : "easeInOutCubic",
             //Boolean - Whether we animate the rotation of the Doughnut
             animateRotate : true,
             //Boolean - Whether we animate scaling the Doughnut from the centre
@@ -177,7 +201,8 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
-    app.controller("SundayPie", ['$scope',function ($scope) {
+
+    app.controller("SundayPie", function ($scope) {
         $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
         $scope.data = [110, 20, 10];
         $scope.options = {
@@ -201,6 +226,7 @@ app.controller("TuesdayPie", ['$scope',function ($scope) {
             legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<data.length; i++){%><li><span style=\"background-color:<%=data[i].fillColor%>\"></span><%if(data[i].label){%><%=data[i].label%><%}%></li><%}%></ul>"
         }
     }])
+           
 app.controller('LandingController', function ($scope) {
 
 })
@@ -240,7 +266,9 @@ app.controller('TrackerController', function ($scope) {
 app.controller('DashboardController', function($scope, $http) {
   $scope.kids = [];
   $scope.kidObjects = [];
-  $http.get('http://avid-api.cfapps.io/relationships/'+localStorage.id).then(function(response) {
+ 
+  console.log(localStorage.id)
+  $http.get('http://avid-api.cfapps.io/relationships/' + localStorage.id).then(function(response) {
     for(var i = 0; i < response.data.rows.length; i++) {
       $scope.kids.push(response.data.rows[i].kid_id);
     }
@@ -289,7 +317,7 @@ app.controller('DashboardController', function($scope, $http) {
         ).then(function(response) {
           var guardianId = localStorage.id;
           var kidId = response.data.rows[0].id;
-            $http.post('http://avid-api.cfapps.io/relationships',
+          $http.post('http://avid-api.cfapps.io/relationships',
             {
               "data": {
                 "type": "relationship",
@@ -299,7 +327,10 @@ app.controller('DashboardController', function($scope, $http) {
                 }
               }
             }
-          )
+          ).then(function(response){
+
+            console.log(response)
+          })
         })
         //   var kidId = response.data.rows[0].id;
 
