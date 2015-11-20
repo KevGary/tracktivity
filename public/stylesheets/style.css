@@ -1,0 +1,154 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family:'Merriweather','Helvetica Neue',Arial,sans-serif;
+  height: 100%;
+ /* margin-top: 70px;*/
+  background-color: #D3D3D3;
+}
+
+.master-header {
+  background-size: cover;
+  background-color: gray;
+}
+
+.logo {
+  height: 175px;
+  width: auto;
+}
+
+.nav-header-row {
+  width: 100%;
+}
+
+.header-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.header-btns {
+  margin-top: 20px;
+  color: white;
+}
+
+.header-btn:hover {
+  background-color: #f05f40;
+  border-radius: 0px;
+  box-shadow: 1px 1px 4px #333;
+}
+
+#three-features {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding-top: 100px;
+  text-align: center;
+  min-height: 350px;
+}
+
+.three-features-row {
+
+}
+.y {
+  border: 1px solid black;
+}
+
+#problem {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 15px;
+  min-height: 200px;
+  background-color: #555;
+  color: #fff;
+}
+
+
+#solution {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 25px;
+  min-height: 200px;
+  background-color: #f05f40;
+  color: #fff;
+}
+
+#tracktivity {
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  text-align: center;
+  color: #fff;
+  background-image: url(/images/running-kids.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#carousel {
+  background-color: #D3D3D3;
+}
+
+.glyphicon-chevron-left {
+    color: #555;
+}
+
+.glyphicon-chevron-right {
+    color: #555;
+}
+
+.carousel-indicators li {
+  background-color: #555;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none
+}
+
+#landing-carousel {
+ /* background-color: black;
+  border: 10px solid black;*/
+  margin-bottom: 20px;
+}
+
+#landing-carousel .active {
+  background-color: #f05f40;
+}
+.active {
+  background-color: #f05f40;
+}
+
+
+
+
+/*footer styling*/
+
+.footer-custom {
+  background-color: #455A64;
+  color: #CFD8DC;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.footer-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.footer-btn:hover {
+  background-color: #f05f40;
+  border-radius: 0px;
+  box-shadow: 1px 1px 4px #333;
+}
+
+.footer-description {
+  margin-top: 20px;
+}
+
+.btn-social-icon {
+  margin: 15px 5px 0px 15px;
+  box-shadow: 3px 3px 8px #333;
+}
