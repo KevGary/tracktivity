@@ -1,0 +1,5 @@
+---
+applications:
+- name: tracktivity-fe
+  memory: 64M
+  buildpack: staticfile_buildpack
